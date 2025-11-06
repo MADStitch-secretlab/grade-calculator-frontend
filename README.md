@@ -109,6 +109,23 @@ npm run build
 npm start
 ```
 
+### 배포 시 환경 변수 설정
+
+프론트엔드를 배포할 때는 **반드시** 배포 플랫폼에서 환경 변수를 설정해야 합니다:
+
+**배포 백엔드 URL:**
+```
+NEXT_PUBLIC_API_URL=https://port-0-grade-calculator-backend-m4h5z3nf13944b7f.sel4.cloudtype.app
+```
+
+#### 배포 플랫폼별 설정 방법
+
+- **Vercel**: 프로젝트 설정 → Environment Variables에서 추가
+- **CloudType**: 환경 변수 설정 메뉴에서 추가
+- **기타 플랫폼**: 각 플랫폼의 환경 변수 설정 메뉴에서 `NEXT_PUBLIC_API_URL` 추가
+
+⚠️ **중요**: `NEXT_PUBLIC_` 접두사가 붙은 환경 변수는 클라이언트 사이드에서도 사용되므로, 빌드 시점에 값이 포함됩니다.
+
 ### 린트 검사
 
 ```bash
@@ -117,9 +134,9 @@ npm run lint
 
 ## 환경 변수
 
-| 변수 | 설명 | 기본값 |
-|-----|------|-------|
-| `NEXT_PUBLIC_API_URL` | 백엔드 API URL | `http://localhost:5001` |
+| 변수 | 설명 | 기본값 | 프로덕션 값 |
+|-----|------|-------|------------|
+| `NEXT_PUBLIC_API_URL` | 백엔드 API URL | `http://localhost:5001` | `https://port-0-grade-calculator-backend-m4h5z3nf13944b7f.sel4.cloudtype.app` |
 
 ## 주의사항
 
